@@ -1,8 +1,7 @@
 <template>
-  <div>
-    <h2>WordsCount</h2>
-    <p class="box box-green"> {{ input }}</p>
-    <p class="box box-blue"> {{ output }}</p>
+  <div class="container">
+    <textarea class="box box-green" v-model="input"></textarea>
+    <p class="box box-blue">{{ output }}</p>
   </div>
 </template>
 
@@ -12,17 +11,24 @@ import wc from '@reed665/wordscount'
 export default {
   data() {
     return {
-      input: 'Love to hate to love',
-      output: ''
+      input: 'Love to hate to love'
     }
   },
-  created() {
-    this.output = wc(this.input)
+  computed: {
+    output() {
+      return wc(this.input)
+    }
   }
 }
 </script>
 
 <style scoped>
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
 .box {
   padding: 15px;
   font-size: 1.5em;
@@ -34,5 +40,9 @@ export default {
 }
 .box-blue {
   background: lightblue;
+}
+textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 </style>

@@ -2,7 +2,7 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <header>
-      <h2>Header</h2>
+      <h1>WordsCount</h1>
     </header>
 
     <main>
@@ -30,7 +30,7 @@ export default {
 body {
   margin: 0;
   overflow-y: scroll;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: sans-serif;
@@ -45,12 +45,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
-#app header, #app footer {
+#app header {
+  background: white;
+  padding: 15px;
+  text-align: center;
+}
+#app footer {
   background: white;
   padding: 15px;
 }
 #app main {
-  padding: 15px;
   flex: 1;
   display: flex;
   flex-direction: column;
