@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import wordscount, { getWordsArray } from '@reed665/wordscount'
+import wordscount from '@reed665/wordscount'
 
 export default {
   data() {
@@ -24,7 +24,7 @@ export default {
       return wordscount(this.input)
     },
     wordsArray() {
-      return getWordsArray(this.input)
+      return Object.keys(this.output)
     }
   }
 }
