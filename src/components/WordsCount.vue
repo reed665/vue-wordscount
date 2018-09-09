@@ -1,19 +1,21 @@
 <template>
   <div class="container">
-    <textarea class="box box-green" v-model="text"></textarea>
+    <textarea class="box" v-model="text"></textarea>
 
-    <div class="box box-blue">
-      <div class="word" v-for="(pair, idx) of countedAndSorted" :key="idx">
-        {{ pair.word }}: {{ pair.count }}
-      </div>
+    <div class="box">
+      <WordFrequencyTable :tableData="countedAndSorted" />
     </div>
   </div>
 </template>
 
 <script>
 import wordscount from '@reed665/wordscount'
+import WordFrequencyTable from './WordFrequencyTable.vue'
 
 export default {
+  components: {
+    WordFrequencyTable
+  },
   data() {
     return {
       text: 'Love to hate to love'
@@ -50,23 +52,9 @@ export default {
   border-radius: 5px;
   margin: 10px;
   overflow: hidden;
-  background: lightgray;
-}
-.box-green {
-  background: lightgreen;
-}
-.box-pink {
-  background: lightpink;
-}
-.box-blue {
-  background: lightblue;
 }
 textarea {
   resize: vertical;
   min-height: 100px;
-}
-.word {
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 </style>
