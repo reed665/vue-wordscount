@@ -9,7 +9,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "@reed665/wordscount": "^1.0.7",
+    "@reed665/wordscount": "^1.1.0",
     "vue": "^2.5.17"
   },
   "devDependencies": {
