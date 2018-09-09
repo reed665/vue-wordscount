@@ -47,7 +47,6 @@ export default {
 .box {
   flex: 1;
   min-width: 0;
-  padding: 15px;
   font-size: 1.5em;
   border-radius: 5px;
   margin: 10px;
@@ -56,5 +55,6 @@ export default {
 textarea {
   resize: vertical;
   min-height: 100px;
+  padding: 10px;
 }
 </style>
