@@ -3,7 +3,7 @@
     <textarea class="box box-green" v-model="text"></textarea>
 
     <div class="box box-blue">
-      <div v-for="(pair, idx) of countedAndSorted" :key="idx">
+      <div class="word" v-for="(pair, idx) of countedAndSorted" :key="idx">
         {{ pair.word }}: {{ pair.count }}
       </div>
     </div>
@@ -35,14 +35,16 @@ export default {
 .container {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  padding: 15px;
+  padding: 10px;
 }
 .box {
+  flex: 1;
+  min-width: 0;
   padding: 15px;
   font-size: 1.5em;
   border-radius: 5px;
-  margin: 10px 0;
+  margin: 10px;
+  overflow: hidden;
   background: lightgray;
 }
 .box-green {
@@ -57,5 +59,9 @@ export default {
 textarea {
   resize: vertical;
   min-height: 100px;
+}
+.word {
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 </style>
