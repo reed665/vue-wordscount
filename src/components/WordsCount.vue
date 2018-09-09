@@ -37,6 +37,11 @@ export default {
   display: flex;
   padding: 10px;
 }
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+}
 .box {
   flex: 1;
   min-width: 0;
