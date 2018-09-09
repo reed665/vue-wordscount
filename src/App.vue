@@ -6,7 +6,7 @@
     </header>
 
     <main>
-      <p>main content</p>
+      <WordsCount />
     </main>
 
     <footer>
@@ -16,13 +16,13 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import WordsCount from './components/WordsCount.vue'
 
 export default {
   name: 'app',
-  // components: {
-  //   HelloWorld
-  // }
+  components: {
+    WordsCount
+  }
 }
 </script>
 
