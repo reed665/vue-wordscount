@@ -1,11 +1,11 @@
 <template>
   <div class="container">
-    <textarea class="box box-green" v-model="input"></textarea>
+    <textarea class="box box-green" v-model="text"></textarea>
 
-    <div class="box box-blue">{{ output }}</div>
-
-    <div class="box box-pink" v-if="wordsArray && wordsArray.length">
-      <div v-for="(word, idx) of wordsArray" :key="idx">{{ word }}</div>
+    <div class="box box-blue">
+      <div v-for="(pair, idx) of countedAndSorted" :key="idx">
+        {{ pair.word }}: {{ pair.count }}
+      </div>
     </div>
   </div>
 </template>
@@ -16,15 +16,16 @@ import wordscount from '@reed665/wordscount'
 export default {
   data() {
     return {
-      input: 'Love to hate to love'
+      text: 'Love to hate to love'
     }
   },
   computed: {
-    output() {
-      return wordscount(this.input)
-    },
-    wordsArray() {
-      return Object.keys(this.output)
+    countedAndSorted() {
+      const textWordsCount = wordscount(this.text)
+      return Object.keys(textWordsCount).map(word => ({
+        word,
+        count: textWordsCount[word]
+      })).sort((a, b) => b.count - a.count)
     }
   }
 }
